@@ -48,22 +48,20 @@ body{
 .logo{
   display:inline-flex;
   align-items:center;
-  justify-content:flex-start;
-  width:156px;
-  height:58px;
-  overflow:hidden;
-  flex:0 0 156px;
+  gap:12px;
   color:var(--text);
-  text-decoration:none
+  text-decoration:none;
+  font-weight:800;
+  letter-spacing:.18em
 }
-.logo-image{
-  display:block;
-  width:100%;
-  height:100%;
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
-  object-position:left center
+.logo-mark{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(197,111,45,.75);
+  background:linear-gradient(135deg,rgba(197,111,45,.22),rgba(255,255,255,.04));
+  color:#f8c08a
 }
 .nav,.footer nav{
   display:flex;
@@ -456,10 +454,8 @@ h3{
 .site-header{
     padding:16px 18px
   }
-.logo{
-    width:132px;
-    height:48px;
-    flex-basis:132px
+.logo-text{
+    letter-spacing:.12em
   }
 .metrics,.cards,.advantages-grid,.project-grid,.timeline{
     grid-template-columns:1fr
@@ -482,5 +478,30 @@ h1{
 .cta{
     margin:0 18px;
     padding:42px 22px
+  }
+}
+
+/* Image logo sizing */
+.logo{
+  justify-content:flex-start;
+  width:156px;
+  height:58px;
+  overflow:hidden;
+  flex:0 0 156px
+}
+.logo-image{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:left center
+}
+@media (max-width:640px){
+.logo{
+    width:132px;
+    height:48px;
+    flex-basis:132px
   }
 }
