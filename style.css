@@ -48,20 +48,22 @@ body{
 .logo{
   display:inline-flex;
   align-items:center;
-  gap:12px;
+  justify-content:flex-start;
+  width:156px;
+  height:58px;
+  overflow:hidden;
+  flex:0 0 156px;
   color:var(--text);
-  text-decoration:none;
-  font-weight:800;
-  letter-spacing:.18em
+  text-decoration:none
 }
-.logo-mark{
-  display:grid;
-  place-items:center;
-  width:42px;
-  height:42px;
-  border:1px solid rgba(197,111,45,.75);
-  background:linear-gradient(135deg,rgba(197,111,45,.22),rgba(255,255,255,.04));
-  color:#f8c08a
+.logo-image{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:left center
 }
 .nav,.footer nav{
   display:flex;
@@ -454,8 +456,10 @@ h3{
 .site-header{
     padding:16px 18px
   }
-.logo-text{
-    letter-spacing:.12em
+.logo{
+    width:132px;
+    height:48px;
+    flex-basis:132px
   }
 .metrics,.cards,.advantages-grid,.project-grid,.timeline{
     grid-template-columns:1fr
