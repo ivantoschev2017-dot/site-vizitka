@@ -9,21 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .logo{display:inline-flex;align-items:center;width:210px;max-width:210px;height:auto;overflow:visible;flex:0 0 210px;padding:0;background:none;border:0;box-shadow:none;text-decoration:none;transition:opacity .25s ease,transform .25s ease}
-      .logo:hover{opacity:.9;transform:translateY(-1px)}
-      .logo-image{display:block;width:100%;height:auto;max-height:66px;object-fit:contain;object-position:left center;border:0;border-radius:0;background:transparent;box-shadow:none;filter:none;mix-blend-mode:normal;transform:none}
-      .footer .logo{width:180px;max-width:180px;flex-basis:180px}
-      .footer .logo-image{max-height:58px}
-      @media (prefers-reduced-motion:reduce){.logo{transition:none}.logo:hover{transform:none}}
-      @media (max-width:640px){.logo{width:150px;max-width:150px;flex-basis:150px}.logo-image{max-height:48px}.footer .logo{width:150px;max-width:150px;flex-basis:150px}}
-    </style>
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
     <header class="site-header" id="top">
       <a class="logo" href="#top" aria-label="Контур — на главную">
-        <img class="logo-image" src="assets/kontur-logo.jpg" alt="Контур" />
+        <span class="logo-mark">К</span>
+        <span class="logo-text">КОНТУР</span>
       </a>
       <nav class="nav" aria-label="Основная навигация">
         <a href="#about">О компании</a>
@@ -140,7 +132,7 @@
     </main>
 
     <footer class="footer">
-      <a class="logo" href="#top" aria-label="Контур — на главную"><img class="logo-image" src="assets/kontur-logo.jpg" alt="Контур" /></a>
+      <a class="logo" href="#top"><span class="logo-mark">К</span><span class="logo-text">КОНТУР</span></a>
       <nav><a href="#about">О компании</a><a href="#services">Услуги</a><a href="#projects">Проекты</a><a href="#contacts">Контакты</a></nav>
       <p>+7 (___) ___-__-__ · info@kontur-example.ru</p>
       <p>© Контур. Строительно-отделочная компания</p>
