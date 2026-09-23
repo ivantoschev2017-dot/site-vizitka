@@ -18,10 +18,6 @@ app.use(express.static(__dirname, {
   maxAge: "1h"
 }));
 
-app.get("*", (_req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-
 app.listen(port, "0.0.0.0", () => {
   console.log(`Kontur static site listening on port ${port}`);
 });
