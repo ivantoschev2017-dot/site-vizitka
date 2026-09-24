@@ -1,6 +1,7 @@
 import express from "express";
 import path from "node:path";
 import fs from "node:fs";
+import os from "node:os";
 import { fileURLToPath } from "node:url";
 import AdmZip from "adm-zip";
 
@@ -10,7 +11,7 @@ const app = express();
 const port = Number(process.env.PORT || 3000);
 
 const zipPath = path.join(__dirname, "site.zip");
-const siteDir = path.join(__dirname, ".site");
+const siteDir = path.join(os.tmpdir(), "kontur-site");
 
 if (fs.existsSync(zipPath)) {
   fs.rmSync(siteDir, { recursive: true, force: true });
