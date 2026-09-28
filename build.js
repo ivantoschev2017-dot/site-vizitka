@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const zipPath = path.join(__dirname, "site.zip");
+const faviconPath = path.join(__dirname, "favicon.png");
 const publicDir = path.join(__dirname, "public");
 
 if (!fs.existsSync(zipPath)) {
@@ -21,6 +22,18 @@ new AdmZip(zipPath).extractAllTo(publicDir, true);
 const indexPath = path.join(publicDir, "index.html");
 if (!fs.existsSync(indexPath)) {
   throw new Error("site.zip extracted, but public/index.html is missing");
+}
+
+if (fs.existsSync(faviconPath)) {
+  fs.copyFileSync(faviconPath, path.join(publicDir, "favicon.png"));
+  let html = fs.readFileSync(indexPath, "utf8");
+  if (!html.includes('href="/favicon.png"')) {
+    html = html.replace(
+      "</head>",
+      '  <link rel="icon" type="image/png" href="/favicon.png" />\n  <link rel="apple-touch-icon" href="/favicon.png" />\n</head>'
+    );
+    fs.writeFileSync(indexPath, html);
+  }
 }
 
 console.log("Prepared current Kontur site in", publicDir);
